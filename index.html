@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Convertisseur de Devises</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="background">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+  </div>
+
+  <div class="container">
+    <header>
+      <div class="logo">💱</div>
+      <h1>Convertisseur de Devises</h1>
+      <p class="subtitle">Taux de change en temps réel</p>
+    </header>
+
+    <div class="card">
+      <div class="update-info">
+        <span class="dot"></span>
+        <span id="last-update">Chargement des taux...</span>
+      </div>
+
+      <div class="input-group">
+        <label for="amount">Montant</label>
+        <div class="input-wrapper">
+          <input
+            type="number"
+            id="amount"
+            placeholder="1.00"
+            value="1"
+            min="0"
+            step="any"
+          />
+        </div>
+      </div>
+
+      <div class="currencies-row">
+        <div class="select-group">
+          <label for="from-currency">De</label>
+          <div class="select-wrapper">
+            <span id="from-flag" class="flag">🌍</span>
+            <select id="from-currency"></select>
+          </div>
+        </div>
+
+        <button id="swap-btn" class="swap-btn" title="Inverser les devises">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 16V4m0 0L3 8m4-4l4 4"/>
+            <path d="M17 8v12m0 0l4-4m-4 4l-4-4"/>
+          </svg>
+        </button>
+
+        <div class="select-group">
+          <label for="to-currency">Vers</label>
+          <div class="select-wrapper">
+            <span id="to-flag" class="flag">🌍</span>
+            <select id="to-currency"></select>
+          </div>
+        </div>
+      </div>
+
+      <button id="convert-btn" class="convert-btn">
+        <span class="btn-text">Convertir</span>
+        <span class="spinner" id="spinner"></span>
+      </button>
+
+      <div id="result-box" class="result-box hidden">
+        <div class="result-main">
+          <span id="result-amount" class="result-amount">0</span>
+          <span id="result-currency" class="result-currency">EUR</span>
+        </div>
+        <div class="result-rate">
+          <span id="rate-display"></span>
+        </div>
+        <div class="result-inverse">
+          <span id="inverse-rate"></span>
+        </div>
+      </div>
+
+      <div id="error-box" class="error-box hidden">
+        <span>⚠️</span>
+        <span id="error-message">Une erreur est survenue.</span>
+      </div>
+    </div>
+
+    <div class="history-section" id="history-section">
+      <h2>Historique des conversions</h2>
+      <ul id="history-list"></ul>
+      <button id="clear-history" class="clear-btn">Effacer l'historique</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
