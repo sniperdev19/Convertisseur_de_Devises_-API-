@@ -51,7 +51,7 @@ Les conversions impliquant le XOF utilisent ce taux fixe comme pivot via l'EUR.
 Ouvrir directement dans un navigateur ou via un serveur local (WAMP, XAMPP…) :
 
 ```
-http://localhost/PROJETS/30 jours 30 projets/2_Convertisseur_de_Devises_(API)/
+http://Convertisseur_de_Devises_(API)/
 ```
 
 Aucune dépendance à installer — tout en HTML/CSS/JS vanilla.
